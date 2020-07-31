@@ -1,0 +1,12 @@
+---
+ - hosts: all
+   become: yes
+   
+   tasks:
+   - name: create docker file
+     command: docker build -t newimage .
+     copy:
+       src: /opt/poject/dockerfile
+       dest: /opt  
+
+
